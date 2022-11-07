@@ -1,0 +1,332 @@
+<html>
+  <head>
+    <title>Federico Rosatelli</title>
+    <link rel="icon" type="image/x-icon" href="/images/profile_picture.jpeg">
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    <link rel="stylesheet" type="text/css" href="/css/home.css">
+    <link rel="stylesheet" type="text/css" href="/css/skills.css">
+    <link rel="stylesheet" type="text/css" href="/css/projects.css">
+    <link rel="stylesheet" type="text/css" href="/css/contact.css">
+    <script src="https://kit.fontawesome.com/7bb1af6f8f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/font-mfizz-2.4.1/font-mfizz.css">
+    <script src="/js/api.js"></script>
+
+  </head>
+  <body>
+    <span id="sidenavObj" onclick="openNav()">&#9776;</span>
+    <div id="mySidenav" class="sidenav">
+      <a href="#">
+        <img src="images/profile_picture.jpeg" alt="Avatar" id="avatar">
+      </a>
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="#whoami">Who Am I</a>
+      <a href="#studies">Studies</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="upperTitle">
+      <p class="name">federico</p>
+      <p class="surname">rosatelli</p>
+    </div>
+    <div>
+      <div onmouseover="typewrite()">
+        <h1 id="whoami">Who Am I</h1>
+        <hr class="solid">
+      </div>
+      <h5 id="demo">
+      </h5>
+    </div>
+    <div>
+      <h1 id="studies">Studies</h1>
+      <hr class="solid">
+      <div>
+        <div class='tableauPlaceholder' id='viz1662919139071' style='margin-left: 20%;margin-right: 20%;'>
+          <noscript>
+            <a href='#'>
+              <img alt='Sheet 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Re&#47;Resu&#47;Sheet1&#47;1_rss.png' style='border: none' />
+            </a>
+          </noscript>
+          <object class='tableauViz'  style='display:none;'>
+            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+            <param name='embed_code_version' value='3' />
+            <param name='site_root' value='' /><param name='name' value='Resu&#47;Sheet1' />
+            <param name='tabs' value='no' /><param name='toolbar' value='yes' />
+            <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Re&#47;Resu&#47;Sheet1&#47;1.png' />
+            <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' />
+            <param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' />
+            <param name='display_count' value='yes' /><param name='language' value='it-IT' />
+          </object>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h1 id="projects">Projects</h1>
+      <hr class="solid">
+      <div id="github" class="github">
+      </div>
+    </div>
+    <div>
+      <h1 id="skills">skills</h1>
+      <hr class="solid">
+      <table>
+        <tbody>
+          <tr>
+            <td style="text-align: left;padding-bottom: 1.5em">
+              <i class="fab fa-python icon-style">
+              </i>
+            </td>
+            <td style="width: 100%;padding-bottom: 1.5em">
+              <div class="w-50 progress progress-data">
+                <div class="progress-bar python-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: center;padding-bottom: 1.5em">
+              <i class="fab fa-java icon-style">
+              </i>
+            </td>
+            <td style="width: 100%;padding-bottom: 1.5em">
+              <div class="w-50 progress progress-data">
+                <div class="progress-bar java-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: center;padding-bottom: 1.5em">
+              <i class="fab fa-js icon-style">
+              </i>
+            </td>
+            <td style="width: 100%;padding-bottom: 1.5em">
+              <div class="w-50 progress progress-data">
+                <div class="progress-bar js-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: center;padding-bottom: 1.5em">
+              <i class="icon-go icon-style">
+              </i>
+            </td>
+            <td style="width: 100%;padding-bottom: 1.5em">
+              <div class="w-50 progress progress-data">
+                <div class="progress-bar go-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: center;padding-bottom: 1.5em">
+              <i class="icon-css icon-style">
+              </i>
+            </td>
+            <td style="width: 100%;padding-bottom: 1.5em">
+              <div class="w-50 progress progress-data">
+                <div class="progress-bar css-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: center;padding-bottom: 1.5em">
+              <i class="fab fa-c icon-style">
+              </i>
+            </td>
+            <td style="width: 100%;padding-bottom: 1.5em;">
+              <div class="w-50 progress progress-data">
+                <div class="progress-bar c-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: center;padding-bottom: 1.5em">
+              <i class="fas fa-database icon-style">
+              </i>
+            </td>
+            <td style="width: 100%;padding-bottom: 1.5em">
+              <div class="w-50 progress progress-data">
+                <div class="progress-bar sql-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: center;padding-bottom: 1.5em">
+              <i class="icon-mongodb icon-style">
+              </i>
+            </td>
+            <td style="width: 100%;padding-bottom: 1.5em">
+              <div class="w-50 progress progress-data">
+                <div class="progress-bar nosql-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: center;padding-bottom: 1.5em">
+              <i class="icon-git icon-style">
+              </i>
+            </td>
+            <td style="width: 100%;padding-bottom: 1.5em">
+              <div class="w-50 progress progress-data">
+                <div class="progress-bar git-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                </div>
+              </div>
+            </td> 
+          </tr>
+          <tr>
+            <td style="text-align: center;padding-bottom: 1.5em">
+              <i class="fab fa-linux icon-style">
+              </i>
+            </td>
+            <td style="width: 100%;padding-bottom: 1.5em">
+              <div class="w-50 progress progress-data">
+                <div class="progress-bar os-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                </div>
+              </div>
+            </td> 
+          </tr>
+          <tr>
+            <td style="text-align: center;padding-bottom: 1.5em">
+              <i class="fab fa-microsoft icon-style">
+              </i>
+            </td>
+            <td style="width: 100%;padding-bottom: 1.5em">
+              <div class="w-50 progress progress-data">
+                <div class="progress-bar os-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                </div>
+              </div>
+            </td> 
+          </tr>
+          <tr>
+            <td style="text-align: center;padding-bottom: 1.5em">
+              <i class="icon-aws icon-style">
+              </i>
+            </td>
+            <td style="width: 100%;padding-bottom: 1.5em">
+              <div class="w-50 progress progress-data">
+                <div class="progress-bar aws-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                </div>
+              </div>
+            </td> 
+          </tr>
+          <tr>
+            <td style="text-align: center;padding-bottom: 1.5em">
+              <i class="icon-docker icon-style">
+              </i>
+            </td>
+            <td style="width: 100%;padding-bottom: 1.5em">
+              <div class="w-50 progress progress-data">
+                <div class="progress-bar docker-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                </div>
+              </div>
+            </td> 
+          </tr>
+          <tr>
+            <td style="text-align: center;padding-bottom: 1em">
+              <img class="icon-style" src="https://img.icons8.com/ios/50/ffffff/tableau-software.png"/>
+            </td>
+            <td style="width: 100%;padding-bottom: 1.5em">
+              <div class="w-50 progress progress-data">
+                <div class="progress-bar tableau-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                </div>
+              </div>
+            </td> 
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <h1 id="contact">Contact</h1>
+      <hr class="solid">
+      <div class="contact-form" id="id-form">
+        <div class="container">
+          <div class="row-form input-container">
+            <div class="col-xs-12">
+              <div class="styled-input wide">
+                <input type="text" id="name-form" required />
+                <label>*Name</label> 
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+              <div class="styled-input">
+                <input type="text" id="email-form" required />
+                <label>*Email</label> 
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+              <div class="styled-input" style="float:right;">
+                <input type="text" id="phone-form" required />
+                <label>Phone Number</label> 
+              </div>
+            </div>
+            <div class="col-xs-12">
+              <div class="styled-input wide">
+                <textarea required id="message-form"></textarea>
+                <label>*Message</label>
+              </div>
+            </div>
+            <div class="col-xs-12">
+              <div class="btn-lrg submit-btn" onclick="sendMessage()">Send Message</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h2>Or you can contact me via my social accounts</h2>
+        <div class="socials">
+          <a href="https://www.linkedin.com/in/federico-rosatelli-a10752206/" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/LinkedIn_icon_circle.svg/2048px-LinkedIn_icon_circle.svg.png" alt="">
+          </a>
+          <a href="https://github.com/bhackfox/" target="_blank">
+            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="">
+          </a>
+          <a href="mailto:contact@federicorosatelli.com?subject=Mail from Our Site" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/4812/4812397.png" alt="aioo">
+          </a>
+        </div>
+      </div>
+    </div>
+
+    
+    <script>
+      
+      var divElement = document.getElementById('viz1662919139071');                    
+      var vizElement = divElement.getElementsByTagName('object')[0];                    
+      vizElement.style.width='78%';
+      vizElement.style.height=(divElement.offsetWidth*0.40)+'px';                    
+      var scriptElement = document.createElement('script');                    
+      scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
+      vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "15%";
+      }
+
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+      }
+
+      var i = 0;
+      var txt = 'Hi!\n my name is federico and i am a computer science student at sapienza università di roma.\nI was born in Rome, I am 22 years old and I like computers world';
+      function typewrite() {
+        if (i < txt.length) {
+          if (txt.charAt(i) == "\n"){
+            document.getElementById("demo").innerHTML += "<br /><br />";
+          }
+          let speed = 50;
+          if (txt.charAt(i) == "."){
+            speed *= 8;
+          }
+          document.getElementById("demo").innerHTML += txt.charAt(i);
+          i++;
+          setTimeout(typewrite, speed);
+        }
+      }
+    </script>
+  </body>
+</html>

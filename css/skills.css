@@ -1,0 +1,115 @@
+.progress {
+    display: -ms-flexbox;
+    display: flex;
+    height: 1rem;
+    overflow: hidden;
+    font-size: .75rem;
+    background-color: rgb(101, 102, 107);
+    transition: width 1s cubic-bezier(0.74, 0.01, 0.75, 1.27);
+    border-radius: 0.25rem;
+    box-shadow: 10px 10px 10px rgba(24, 24, 24, 0.3);
+
+}
+
+.icon-style{
+    font-size: 3em;
+    color:white;
+    
+}
+
+table{
+    margin-left: 20%;
+}
+
+.progress-data{
+    border-radius: 0;
+    margin-left: 2%;
+    height: 20px;
+}
+
+.w-50 {
+    width: 60%!important;
+}
+
+.progress-bar {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #b3be13dc;
+    transition: 0.4s;
+    box-shadow: 10px 10px 10px rgba(24, 24, 24, 0.3);
+
+}
+
+
+
+.python-bar {
+    transition: width 1s cubic-bezier(0.74, 0.01, 0.75, 1.27);
+    width: 100%;
+}
+
+.java-bar {
+    transition: width 0.1s cubic-bezier(0.74, 0.01, 0.75, 1.27);
+    width: 85%;
+}
+
+.js-bar {
+    transition: width 0.1s cubic-bezier(0.74, 0.01, 0.75, 1.27);
+    width: 90%;
+}
+
+.go-bar {
+    transition: width 0.1s cubic-bezier(0.74, 0.01, 0.75, 1.27);
+    width: 80%;
+}
+
+.css-bar {
+    transition: width 0.1s cubic-bezier(0.74, 0.01, 0.75, 1.27);
+    width: 85%;
+}
+
+.c-bar {
+    transition: width 0.1s cubic-bezier(0.74, 0.01, 0.75, 1.27);
+    width: 80%;
+}
+
+.sql-bar {
+    transition: width 0.1s cubic-bezier(0.74, 0.01, 0.75, 1.27);
+    width: 95%;
+}
+
+.nosql-bar {
+    transition: width 0.1s cubic-bezier(0.74, 0.01, 0.75, 1.27);
+    width: 85%;
+}
+
+.git-bar {
+    transition: width 0.1s cubic-bezier(0.74, 0.01, 0.75, 1.27);
+    width: 90%;
+}
+
+.os-bar {
+    transition: width 0.1s cubic-bezier(0.74, 0.01, 0.75, 1.27);
+    width: 100%;
+}
+
+.aws-bar {
+    transition: width 0.1s cubic-bezier(0.74, 0.01, 0.75, 1.27);
+    width: 80%;
+}
+
+.docker-bar {
+    transition: width 0.1s cubic-bezier(0.74, 0.01, 0.75, 1.27);
+    width: 90%;
+}
+
+.tableau-bar {
+    transition: width 0.1s cubic-bezier(0.74, 0.01, 0.75, 1.27);
+    width: 80%;
+}
