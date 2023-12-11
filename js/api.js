@@ -39,7 +39,7 @@ fetch("https://api.github.com/users/federico-rosatelli/repos")
             </div>`;
         }
         html += `</div>`;
-        html += `<div class="continue-git"><a href="https://github.com/bhackfox/" target="_blank">More ...</a></div>`;
+        html += `<div class="continue-git"><a href="https://github.com/federico-rosatelli/" target="_blank">More ...</a></div>`;
 
         div.innerHTML = html;
         document.getElementById("github").appendChild(div);
