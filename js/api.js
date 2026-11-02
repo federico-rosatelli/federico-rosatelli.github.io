@@ -1,101 +1,264 @@
 const languageColor = {
-    "Python":"3572A5",
-    "EJS":"a91e50",
-    "JavaScript":"f1e05a"
+  "Python": "#3572A5",
+  "Go": "#00ADD8",
+  "Kotlin": "#A97BFF",
+  "TypeScript": "#3178c6",
+  "JavaScript": "#f1e05a",
+  "Vue": "#41b883",
+  "HTML": "#e34c26",
+  "Jupyter Notebook": "#DA5B0B",
+  "C": "#555555",
+  "C++": "#f34b7d",
+  "EJS": "#a91e50",
+  "Assembly": "#6E4C13"
 };
 
-fetch("https://api.github.com/users/federico-rosatelli")
-    .then((data)=>data.json())
-    .then((data)=>{
-        let a = `<div class="row-git"><a href="https://github.com/federico-rosatelli/" target="_blank"><img src="${data.avatar_url}" id="github-avatar"></img></a><p>federico-rosatelli</p></div>`;
-        document.getElementById("github").innerHTML = a;
-    });
+const fallbackRepos = [
+  {
+    name: "PyABD",
+    html_url: "https://github.com/federico-rosatelli/PyABD",
+    description: "Fast, unsupervised video action boundary detection in PyTorch via feature similarity & hierarchical clustering (CVPR 2022).",
+    language: "Python",
+    stargazers_count: 0,
+    updated_at: "2026-03-27T10:48:16Z"
+  },
+  {
+    name: "GeoFusion",
+    html_url: "https://github.com/federico-rosatelli/GeoFusion",
+    description: "Interactive platform for geometric design, SLSQP optimization, and 3D visualization of stellarator plasma boundaries.",
+    language: "Python",
+    stargazers_count: 0,
+    updated_at: "2026-08-19T15:39:34Z"
+  },
+  {
+    name: "vision-systems",
+    html_url: "https://github.com/federico-rosatelli/vision-systems",
+    description: "Flea Beetle Crop Damage Assessment using DINOv3 ViT-S/16, Multiple Instance Learning (MIL), and RF-DETR detection.",
+    language: "Jupyter Notebook",
+    stargazers_count: 0,
+    updated_at: "2026-09-29T15:35:40Z"
+  },
+  {
+    name: "uav-drone-path",
+    html_url: "https://github.com/federico-rosatelli/uav-drone-path",
+    description: "3D coordinate grid & obstacle avoidance path planning package for autonomous virtual UAV navigation.",
+    language: "Python",
+    stargazers_count: 4,
+    updated_at: "2026-01-16T12:14:54Z"
+  },
+  {
+    name: "Horus",
+    html_url: "https://github.com/federico-rosatelli/Horus",
+    description: "Saliency Detection & Environment Monitoring by UAVs via Spatiotemporal Knowledge Distillation.",
+    language: "Python",
+    stargazers_count: 0,
+    updated_at: "2024-11-18T16:17:19Z"
+  },
+  {
+    name: "Bio-Server",
+    html_url: "https://github.com/federico-rosatelli/Bio-Server",
+    description: "High-performance Go server backend for computational biology platforms.",
+    language: "Go",
+    stargazers_count: 0,
+    updated_at: "2023-06-08T16:09:26Z"
+  },
+  {
+    name: "Vulgaris-Platform",
+    html_url: "https://github.com/federico-rosatelli/Vulgaris-Platform",
+    description: "Vue.js front-end interface for interactive biological data views and tables.",
+    language: "Vue",
+    stargazers_count: 0,
+    updated_at: "2023-06-10T17:54:04Z"
+  },
+  {
+    name: "wasa-photo",
+    html_url: "https://github.com/federico-rosatelli/wasa-photo",
+    description: "Full-stack photo sharing social network backend in Go and REST API architecture.",
+    language: "Go",
+    stargazers_count: 0,
+    updated_at: "2023-03-12T14:16:26Z"
+  },
+  {
+    name: "centralized-botnet",
+    html_url: "https://github.com/federico-rosatelli/centralized-botnet",
+    description: "Distributed network security research prototype implemented in Python and Golang.",
+    language: "Go",
+    stargazers_count: 0,
+    updated_at: "2023-06-08T16:02:14Z"
+  }
+];
 
+let allRepos = [...fallbackRepos];
 
-fetch("https://api.github.com/users/federico-rosatelli/repos")
-    .then((data)=>data.json())
-    .then((data)=>{
-        data.sort((a,b)=>(a.created_at>b.created_at) ? 1 : -1);
-        let pinned = [data[10],data[7],data[4],data[8]];
-        let div = document.createElement("div");
-        let html = `<div class="grid-container">`;
-        
-        for (let i = 0; i < pinned.length; i++) {
-            console.log(pinned[i].language);
-            html += `
-            <div class="github-data">
-                <div class="title">
-                    <a href="${pinned[i].html_url}" target="_blank">${pinned[i].name}</a>
-                    <p>${pinned[i].description ? pinned[i].description : ""}</p>
-                </div>
-                <div class="data-project">
-                    <span class="repo-language" style="background-color:#${languageColor[pinned[i].language]}"></span>
-                    <p>${pinned[i].language}</p>
-                    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="repo-file">
-                        <path fill="#ffffff" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"></path>
-                    </svg>
-                    <p>${pinned[i].size}</p>
-                </div>
-            </div>`;
-        }
-        html += `</div>`;
-        html += `<div class="continue-git"><a href="https://github.com/federico-rosatelli/" target="_blank">More ...</a></div>`;
+function renderRepos(filterText = "") {
+  const container = document.getElementById("live-repos-container");
+  if (!container) return;
 
-        div.innerHTML = html;
-        document.getElementById("github").appendChild(div);
-        
-    });
+  const query = filterText.trim().toLowerCase();
+  const filtered = allRepos.filter((r) => {
+    if (r.name === "federico-rosatelli.github.io") return false;
+    const matchName = r.name.toLowerCase().includes(query);
+    const matchDesc = (r.description || "").toLowerCase().includes(query);
+    const matchLang = (r.language || "").toLowerCase().includes(query);
+    return matchName || matchDesc || matchLang;
+  });
 
+  if (filtered.length === 0) {
+    container.innerHTML = `<p style="color: var(--text-secondary); grid-column: 1/-1;">No matching repositories found.</p>`;
+    return;
+  }
 
-var timeWait = Date.now();
-function sendMessage(){
-    var name = document.getElementById("name-form").value;
-    var email = document.getElementById("email-form").value;
-    var phone = document.getElementById("phone-form").value;
-    var message = document.getElementById("message-form").value;
-    var id_j_error = document.getElementById("id-error");
-    var id_j_ok = document.getElementById("id-ok");
-    document.getElementById("name-form").value = "";
-    document.getElementById("email-form").value = "";
-    document.getElementById("phone-form").value = "";
-    document.getElementById("message-form").value = "";
-    if(id_j_error){
-        id_j_error.outerHTML = "";
-    }
-    if(id_j_ok){
-        id_j_ok.outerHTML = "";
-    }
-    if(name && email && message){
-        var id_ok = document.createElement("div");
-        id_ok.setAttribute("id","id-ok");
-        let msg = "You Have To Wait...";
-        if (Date.now()-timeWait > 3000){
-            timeWait = Date.now();
-            msg = "Message Sent!";
-            fetch('/contactme',{
-                method:'POST',
-                headers:{
-                    'Content-Type':'application/json'
-                },
-                body:JSON.stringify({
-                    name:name,
-                    email:email,
-                    phone:phone,
-                    message:message
-                })
-            });
-        }
-        var ok = `<div class="btn-lrg id-btn" style="background-color: rgb(97, 255, 118);">${msg}</div>`;
-        id_ok.innerHTML = ok;
-        document.getElementById("id-form").appendChild(id_ok);
-    }
-    else{
-        var id_error = document.createElement("div");
-        id_error.setAttribute("id","id-error");
-        var error = `<div class="btn-lrg id-btn" style="background-color: rgb(255 75 78);">You Have To Fill *</div>`;
-        id_error.innerHTML = error;
-        document.getElementById("id-form").appendChild(id_error);
-    }
-    
-  
+  container.innerHTML = filtered
+    .slice(0, 12)
+    .map((repo) => {
+      const lang = repo.language || "Code";
+      const color = languageColor[lang] || "#2dd4bf";
+      const year = repo.updated_at ? new Date(repo.updated_at).getFullYear() : "";
+      const stars = repo.stargazers_count > 0 ? `<span>★ ${repo.stargazers_count}</span>` : "";
+      const desc = repo.description
+        ? repo.description
+        : "Open-source software & engineering repository by Federico Rosatelli.";
+
+      return `
+        <a class="live-repo-item" href="${repo.html_url}" target="_blank" rel="noopener">
+          <div>
+            <div class="live-repo-name">
+              <span>${repo.name}</span>
+              <i class="fas fa-arrow-up-right-from-square" style="font-size: 0.78rem; color: var(--text-muted);"></i>
+            </div>
+            <p class="live-repo-desc">${desc}</p>
+          </div>
+          <div class="live-repo-meta">
+            <span><span class="lang-dot" style="background-color: ${color};"></span>${lang}</span>
+            ${stars}
+            <span>Updated ${year}</span>
+          </div>
+        </a>
+      `;
+    })
+    .join("");
 }
+
+function loadGitHubData() {
+  renderRepos();
+
+  fetch("https://api.github.com/users/federico-rosatelli/repos?sort=updated&per_page=100")
+    .then((res) => (res.ok ? res.json() : Promise.reject()))
+    .then((data) => {
+      if (Array.isArray(data) && data.length > 0) {
+        // Merge curated descriptions for repos that have empty GitHub descriptions
+        const descOverrides = {
+          "vision-systems": "Flea Beetle Crop Damage Assessment using DINOv3 ViT-S/16, Multiple Instance Learning (MIL), and RF-DETR (University of Bonn).",
+          "wasa-photo": "Full-stack photo sharing platform written in Go and Vue.js (Sapienza Web & Software Architecture).",
+          "biologia": "Computational biology data processing and analysis toolkit in Python.",
+          "Os1-Bot": "Automated Telegram / Discord bot utility built in Python."
+        };
+        allRepos = data
+          .filter((r) => !r.fork)
+          .map((r) => ({
+            ...r,
+            description: r.description || descOverrides[r.name] || ""
+          }));
+        renderRepos(document.getElementById("repo-search")?.value || "");
+      }
+    })
+    .catch(() => {
+      // Keep fallbackRepos rendered
+    });
+}
+
+// Project Category Filtering
+function filterProjects(category, btnEl) {
+  document.querySelectorAll(".filter-btn").forEach((b) => b.classList.remove("active"));
+  if (btnEl) btnEl.classList.add("active");
+
+  const cards = document.querySelectorAll(".project-card");
+  cards.forEach((card) => {
+    const cats = (card.getAttribute("data-category") || "").split(" ");
+    if (category === "all" || cats.includes(category)) {
+      card.style.display = "flex";
+    } else {
+      card.style.display = "none";
+    }
+  });
+}
+
+// Language Toggle (EN / IT)
+let currentLang = "en";
+
+function toggleLanguage() {
+  currentLang = currentLang === "en" ? "it" : "en";
+  const btn = document.getElementById("lang-toggle-btn");
+  if (btn) {
+    btn.textContent = currentLang === "en" ? "IT 🇮🇹" : "EN 🇬🇧";
+  }
+
+  document.querySelectorAll("[data-en][data-it]").forEach((el) => {
+    const text = el.getAttribute(`data-${currentLang}`);
+    if (text) {
+      el.innerHTML = text;
+    }
+  });
+}
+
+// Mobile Menu
+function toggleMobileMenu() {
+  const nav = document.getElementById("nav-links");
+  if (nav) nav.classList.toggle("open");
+}
+
+// Contact Form Handler
+function sendMessage() {
+  const name = document.getElementById("name-form")?.value.trim();
+  const email = document.getElementById("email-form")?.value.trim();
+  const subject = document.getElementById("subject-form")?.value.trim() || "Portfolio Inquiry";
+  const message = document.getElementById("message-form")?.value.trim();
+  const feedback = document.getElementById("form-feedback");
+
+  if (!name || !email || !message) {
+    if (feedback) {
+      feedback.style.display = "block";
+      feedback.style.background = "rgba(239, 68, 68, 0.15)";
+      feedback.style.border = "1px solid rgba(239, 68, 68, 0.4)";
+      feedback.style.color = "#fca5a5";
+      feedback.textContent =
+        currentLang === "en"
+          ? "Please fill in your Name, Email, and Message."
+          : "Compila Nome, Email e Messaggio per continuare.";
+    }
+    return;
+  }
+
+  const mailtoSubject = encodeURIComponent(`[Portfolio] ${subject} — from ${name}`);
+  const mailtoBody = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+  window.location.href = `mailto:frosatelli@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
+
+  if (feedback) {
+    feedback.style.display = "block";
+    feedback.style.background = "rgba(45, 212, 191, 0.15)";
+    feedback.style.border = "1px solid rgba(45, 212, 191, 0.4)";
+    feedback.style.color = "#5eead4";
+    feedback.textContent =
+      currentLang === "en"
+        ? "Opening your email client to send the message directly to Federico!"
+        : "Apertura del client email per inviare il messaggio direttamente a Federico!";
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  loadGitHubData();
+
+  const searchInput = document.getElementById("repo-search");
+  if (searchInput) {
+    searchInput.addEventListener("input", (e) => {
+      renderRepos(e.target.value);
+    });
+  }
+
+  // Close mobile menu when clicking a link
+  document.querySelectorAll(".nav-links a").forEach((link) => {
+    link.addEventListener("click", () => {
+      document.getElementById("nav-links")?.classList.remove("open");
+    });
+  });
+});

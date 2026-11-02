@@ -1,358 +1,943 @@
-<html>
-  <head>
-    <title>Federico Rosatelli</title>
-    <link rel="icon" type="image/x-icon" href="/images/profile_picture.jpeg">
-    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
-    <link rel="stylesheet" type="text/css" href="/css/home.css">
-    <link rel="stylesheet" type="text/css" href="/css/skills.css">
-    <link rel="stylesheet" type="text/css" href="/css/projects.css">
-    <link rel="stylesheet" type="text/css" href="/css/contact.css">
-    <script src="https://kit.fontawesome.com/7bb1af6f8f.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/font-mfizz-2.4.1/font-mfizz.css">
-    <script src="/js/api.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Federico Rosatelli — AI Architect, Computer Vision & Co-Founder @ Aidra</title>
+  <meta name="description" content="Portfolio of Federico Rosatelli — Co-Founder & CTO of Aidra, Computer Vision & Edge AI Researcher at the University of Bonn, and Sapienza Università di Roma alumnus." />
+  <link rel="icon" type="image/jpeg" href="images/profile_picture.jpeg" />
 
-  </head>
-  <body>
-    <span id="sidenavObj" onclick="openNav()">&#9776;</span>
-    <div id="mySidenav" class="sidenav">
-      <a href="#">
-        <img src="images/profile_picture.jpeg" alt="Avatar" id="avatar">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="css/all.min.css" />
+  <link rel="stylesheet" href="css/font-mfizz-2.4.1/font-mfizz.css" />
+
+  <!-- Portfolio Stylesheet -->
+  <link rel="stylesheet" href="css/portfolio.css" />
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <header class="site-navbar">
+    <div class="navbar-inner">
+      <a href="#whoami" class="brand-logo">
+        <img src="images/profile_picture.jpeg" alt="Federico Rosatelli" />
+        <span>federico<span class="accent-dot">.</span>rosatelli</span>
       </a>
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <a href="#whoami">Who Am I</a>
-      <a href="#studies">Studies</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
-    </div>
-    <div class="upperTitle">
-      <p class="name">federico</p>
-      <p class="surname">rosatelli</p>
-    </div>
-    <div>
-      <div onmouseover="typewrite()">
-        <h1 id="whoami">Who Am I</h1>
-        <hr class="solid">
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#whoami" data-en="Who Am I" data-it="Chi Sono">Who Am I</a></li>
+        <li><a href="#aidra" data-en="Aidra" data-it="Aidra">Aidra</a></li>
+        <li><a href="#studies" data-en="Studies & Journey" data-it="Studi & Percorso">Studies & Journey</a></li>
+        <li><a href="#projects" data-en="Projects & Research" data-it="Progetti & Ricerca">Projects & Research</a></li>
+        <li><a href="#skills" data-en="Tech Stack" data-it="Competenze">Tech Stack</a></li>
+        <li><a href="#contact" data-en="Contact" data-it="Contatti">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="lang-switch" id="lang-toggle-btn" onclick="toggleLanguage()" title="Switch Language / Cambia Lingua">
+          IT 🇮🇹
+        </button>
+        <a href="https://github.com/federico-rosatelli" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle Menu">
+          <i class="fas fa-bars"></i>
+        </button>
       </div>
-      <h5 id="demo">
-      </h5>
     </div>
-    <div>
-      <h1 id="studies">Studies</h1>
-      <hr class="solid">
-      <div>
-        <div class='tableauPlaceholder' id='viz1662919139071' style='margin-left: 20%;margin-right: 20%;'>
-          <noscript>
-            <a href='#'>
-              <img alt='Sheet 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Re&#47;Resu&#47;Sheet1&#47;1_rss.png' style='border: none' />
+  </header>
+
+  <main class="container-main">
+
+    <!-- HERO / WHO AM I -->
+    <section class="hero-section" id="whoami">
+      <div class="hero-grid">
+        <div>
+          <div class="status-pill">
+            <span class="status-dot"></span>
+            <span data-en="Co-Founder & CTO @ Aidra • M.Sc. CS @ University of Bonn" data-it="Co-Founder & CTO @ Aidra • M.Sc. CS @ Università di Bonn">
+              Co-Founder & CTO @ Aidra • M.Sc. CS @ University of Bonn
+            </span>
+          </div>
+
+          <h1 class="hero-title"
+              data-en="Architecting <span class='text-gradient'>Edge AI</span> &amp; <span class='text-gold'>Computer Vision</span> for the Physical World."
+              data-it="Progetto <span class='text-gradient'>Edge AI</span> &amp; <span class='text-gold'>Computer Vision</span> per il Mondo Reale.">
+            Architecting <span class="text-gradient">Edge AI</span> &amp; <span class="text-gold">Computer Vision</span> for the Physical World.
+          </h1>
+
+          <p class="hero-subtitle"
+             data-en="Hi, I'm <strong>Federico Rosatelli</strong> — an AI Architect, Computer Vision researcher, and Technical Co-Founder splitting my path between <strong>Rome</strong> and <strong>Bonn</strong>. I specialize in compressing complex video-understanding neural networks into ultra-fast, sub-watt software for autonomous UAVs, scientific physics modeling, and real-time visual systems."
+             data-it="Ciao, sono <strong>Federico Rosatelli</strong> — AI Architect, ricercatore in Computer Vision e Co-Founder tecnico tra <strong>Roma</strong> e <strong>Bonn</strong>. Mi occupo di comprimere reti neurali avanzate per la comprensione video in modelli ultra-leggeri per droni autonomi (UAV), fisica computazionale e sistemi di visione in tempo reale.">
+            Hi, I'm <strong>Federico Rosatelli</strong> — an AI Architect, Computer Vision researcher, and Technical Co-Founder splitting my path between <strong>Rome</strong> and <strong>Bonn</strong>. I specialize in compressing complex video-understanding neural networks into ultra-fast, sub-watt software for autonomous UAVs, scientific physics modeling, and real-time visual systems.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#aidra" class="btn btn-primary">
+              <i class="fas fa-bolt"></i>
+              <span data-en="Discover Aidra" data-it="Scopri Aidra">Discover Aidra</span>
             </a>
-          </noscript>
-          <object class='tableauViz'  style='display:none;'>
-            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-            <param name='embed_code_version' value='3' />
-            <param name='site_root' value='' /><param name='name' value='Resu&#47;Sheet1' />
-            <param name='tabs' value='no' /><param name='toolbar' value='yes' />
-            <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Re&#47;Resu&#47;Sheet1&#47;1.png' />
-            <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' />
-            <param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' />
-            <param name='display_count' value='yes' /><param name='language' value='it-IT' />
-          </object>
+            <a href="#projects" class="btn btn-outline">
+              <i class="fas fa-code-branch"></i>
+              <span data-en="Explore Projects" data-it="Esplora i Progetti">Explore Projects</span>
+            </a>
+            <a href="https://www.linkedin.com/in/federico-rosatelli/" target="_blank" rel="noopener" class="btn btn-outline">
+              <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+          </div>
+
+          <div class="hero-metrics">
+            <div class="metric-item">
+              <span class="metric-val">&lt;0.5W</span>
+              <span class="metric-label" data-en="Onboard Edge AI Power" data-it="Consumo Edge AI Onboard">Onboard Edge AI Power</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-val">50 FPS</span>
+              <span class="metric-label" data-en="Real-Time MCU Trigger" data-it="Inferenza Real-Time MCU">Real-Time MCU Trigger</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-val">24+</span>
+              <span class="metric-label" data-en="Open-Source & Research Repos" data-it="Repository & Progetti">Open-Source & Research Repos</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-val">Rome ⇄ Bonn</span>
+              <span class="metric-label" data-en="Sapienza & Uni Bonn" data-it="Sapienza & Uni Bonn">Sapienza & Uni Bonn</span>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class='tableauPlaceholder' id='viz1702298843374' style='margin-left: 20%;margin-right: 20%;'>
-        <noscript>
-          <a href='#'><img alt='Experiences ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Cv&#47;Cv-Experience&#47;Experiences&#47;1_rss.png' style='border: none' />
-          </a>
-        </noscript>
-        <object class='tableauViz'  style='display:none;'>
-          <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
-          <param name='embed_code_version' value='3' /> 
-          <param name='site_root' value='' />
-          <param name='name' value='Cv-Experience&#47;Experiences' />
-          <param name='tabs' value='no' /><param name='toolbar' value='yes' />
-          <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Cv&#47;Cv-Experience&#47;Experiences&#47;1.png' /> 
-          <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' />
-          <param name='display_spinner' value='yes' />
-          <param name='display_overlay' value='yes' />
-          <param name='display_count' value='yes' />
-          <param name='language' value='it-IT' />
-        </object>
-      </div>
-    </div>
-    <div>
-      <h1 id="projects">Projects</h1>
-      <hr class="solid">
-      <div id="github" class="github">
-      </div>
-    </div>
-    <div>
-      <h1 id="skills">skills</h1>
-      <hr class="solid">
-      <table>
-        <tbody>
-          <tr>
-            <td style="text-align: left;padding-bottom: 1.5em">
-              <i class="fab fa-python icon-style" title="Python">
-              </i>
-            </td>
-            <td style="width: 100%;padding-bottom: 1.5em">
-              <div class="w-50 progress progress-data">
-                <div class="progress-bar python-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                </div>
+
+        <!-- Right Visual Card -->
+        <div class="hero-visual">
+          <div class="profile-card">
+            <div class="profile-header">
+              <div class="profile-avatar-wrap">
+                <img src="images/profile_picture.jpeg" alt="Federico Rosatelli" />
               </div>
-            </td>
-          </tr>
-          <tr>
-            <td style="text-align: center;padding-bottom: 1.5em">
-              <i class="fab fa-java icon-style" title="Java">
-              </i>
-            </td>
-            <td style="width: 100%;padding-bottom: 1.5em">
-              <div class="w-50 progress progress-data">
-                <div class="progress-bar java-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+              <div class="profile-meta">
+                <h2>Federico Rosatelli</h2>
+                <p>AI Architect &amp; Co-Founder @ Aidra</p>
+                <div class="profile-locations">
+                  <span class="loc-badge">📍 Bonn, Germany</span>
+                  <span class="loc-badge">🏛️ University of Bonn</span>
+                  <span class="loc-badge">🎓 Sapienza Alumni</span>
                 </div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td style="text-align: center;padding-bottom: 1.5em">
-              <i class="fab fa-js icon-style" title="Javascript">
-              </i>
-            </td>
-            <td style="width: 100%;padding-bottom: 1.5em">
-              <div class="w-50 progress progress-data">
-                <div class="progress-bar js-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td style="text-align: center;padding-bottom: 1.5em">
-              <i class="icon-go icon-style" title="GO">
-              </i>
-            </td>
-            <td style="width: 100%;padding-bottom: 1.5em">
-              <div class="w-50 progress progress-data">
-                <div class="progress-bar go-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td style="text-align: center;padding-bottom: 1.5em">
-              <i class="icon-css icon-style" title="CSS">
-              </i>
-            </td>
-            <td style="width: 100%;padding-bottom: 1.5em">
-              <div class="w-50 progress progress-data">
-                <div class="progress-bar css-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td style="text-align: center;padding-bottom: 1.5em">
-              <i class="fab fa-c icon-style" title="C">
-              </i>
-            </td>
-            <td style="width: 100%;padding-bottom: 1.5em;">
-              <div class="w-50 progress progress-data">
-                <div class="progress-bar c-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td style="text-align: center;padding-bottom: 1.5em">
-              <i class="fas fa-database icon-style" title="SQL">
-              </i>
-            </td>
-            <td style="width: 100%;padding-bottom: 1.5em">
-              <div class="w-50 progress progress-data">
-                <div class="progress-bar sql-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td style="text-align: center;padding-bottom: 1.5em">
-              <i class="icon-mongodb icon-style" title="NoSQL">
-              </i>
-            </td>
-            <td style="width: 100%;padding-bottom: 1.5em">
-              <div class="w-50 progress progress-data">
-                <div class="progress-bar nosql-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td style="text-align: center;padding-bottom: 1.5em">
-              <i class="icon-git icon-style" title="Git">
-              </i>
-            </td>
-            <td style="width: 100%;padding-bottom: 1.5em">
-              <div class="w-50 progress progress-data">
-                <div class="progress-bar git-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </td> 
-          </tr>
-          <tr>
-            <td style="text-align: center;padding-bottom: 1.5em">
-              <i class="fab fa-linux icon-style" title="Linux">
-              </i>
-            </td>
-            <td style="width: 100%;padding-bottom: 1.5em">
-              <div class="w-50 progress progress-data">
-                <div class="progress-bar os-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </td> 
-          </tr>
-          <tr>
-            <td style="text-align: center;padding-bottom: 1.5em">
-              <i class="fab fa-microsoft icon-style" title="Microsoft">
-              </i>
-            </td>
-            <td style="width: 100%;padding-bottom: 1.5em">
-              <div class="w-50 progress progress-data">
-                <div class="progress-bar os-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </td> 
-          </tr>
-          <tr>
-            <td style="text-align: center;padding-bottom: 1.5em">
-              <i class="icon-aws icon-style" title="AWS">
-              </i>
-            </td>
-            <td style="width: 100%;padding-bottom: 1.5em">
-              <div class="w-50 progress progress-data">
-                <div class="progress-bar aws-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </td> 
-          </tr>
-          <tr>
-            <td style="text-align: center;padding-bottom: 1.5em">
-              <i class="icon-docker icon-style" title="Docker">
-              </i>
-            </td>
-            <td style="width: 100%;padding-bottom: 1.5em">
-              <div class="w-50 progress progress-data">
-                <div class="progress-bar docker-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </td> 
-          </tr>
-          <tr>
-            <td style="text-align: center;padding-bottom: 1em">
-              <img class="icon-style" src="https://img.icons8.com/ios/50/ffffff/tableau-software.png" title="Tableau"/>
-            </td>
-            <td style="width: 100%;padding-bottom: 1.5em">
-              <div class="w-50 progress progress-data">
-                <div class="progress-bar tableau-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </td> 
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div>
-      <h1 id="contact">Contact</h1>
-      <hr class="solid">
-      <div class="contact-form" id="id-form">
-        <div class="container">
-          <div class="row-form input-container">
-            <div class="col-xs-12">
-              <div class="styled-input wide">
-                <input type="text" id="name-form" required />
-                <label>*Name</label> 
               </div>
             </div>
-            <div class="col-md-6 col-sm-12">
-              <div class="styled-input">
-                <input type="text" id="email-form" required />
-                <label>*Email</label> 
+
+            <div class="terminal-box">
+              <div class="terminal-dots">
+                <span class="dot-red"></span>
+                <span class="dot-yellow"></span>
+                <span class="dot-green"></span>
               </div>
-            </div>
-            <div class="col-md-6 col-sm-12">
-              <div class="styled-input" style="float:right;">
-                <input type="text" id="phone-form" required />
-                <label>Phone Number</label> 
+              <div>
+                <span class="code-key">const</span> federico = {<br/>
+                &nbsp;&nbsp;<span class="code-key">role</span>: <span class="code-str">"Co-Founder &amp; CTO @ Aidra"</span>,<br/>
+                &nbsp;&nbsp;<span class="code-key">education</span>: [<span class="code-str">"M.Sc. Uni Bonn"</span>, <span class="code-str">"B.Sc. Sapienza Rome"</span>],<br/>
+                &nbsp;&nbsp;<span class="code-key">research</span>: [<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-str">"Spatiotemporal Knowledge Distillation (SKD)"</span>,<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-str">"Action Segmentation &amp; Video Understanding"</span>,<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-str">"Stellarator Fusion Geometry Optimization"</span><br/>
+                &nbsp;&nbsp;],<br/>
+                &nbsp;&nbsp;<span class="code-key">stack</span>: [<span class="code-str">"PyTorch"</span>, <span class="code-str">"ONNX/INT8"</span>, <span class="code-str">"C/C++"</span>, <span class="code-str">"Go"</span>, <span class="code-str">"Kotlin"</span>]<br/>
+                };
               </div>
-            </div>
-            <div class="col-xs-12">
-              <div class="styled-input wide">
-                <textarea required id="message-form"></textarea>
-                <label>*Message</label>
-              </div>
-            </div>
-            <div class="col-xs-12">
-              <div class="btn-lrg submit-btn" onclick="sendMessage()">Send Message</div>
             </div>
           </div>
         </div>
       </div>
-      <div>
-        <h2>Or you can contact me via my social accounts</h2>
-        <div class="socials">
-          <a href="https://www.linkedin.com/in/federico-rosatelli/" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/LinkedIn_icon_circle.svg/2048px-LinkedIn_icon_circle.svg.png" alt="">
-          </a>
-          <a href="https://github.com/federico-rosatelli/" target="_blank">
-            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="">
-          </a>
-          <a href="mailto:frosatelli@gmail.com?subject=Mail from My Site" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/4812/4812397.png" alt="aioo">
-          </a>
+    </section>
+
+    <!-- AIDRA SPOTLIGHT SECTION -->
+    <section class="section-block" id="aidra">
+      <div class="section-header">
+        <span class="section-eyebrow" data-en="Flagship Venture & Deep-Tech Startup" data-it="Startup Deep-Tech & Progetto Principale">Flagship Venture & Deep-Tech Startup</span>
+        <h2 class="section-title" data-en="Aidra — Autonomous UAV Edge Intelligence" data-it="Aidra — Intelligenza Edge per Droni Autonomi">
+          Aidra — Autonomous UAV Edge Intelligence
+        </h2>
+        <p class="section-desc"
+           data-en="Eliminating the post-flight data bottleneck for commercial drone fleets through Spatiotemporal Knowledge Distillation and ultra-low-power onboard filtering."
+           data-it="Eliminiamo il collo di bottiglia dell'analisi video post-volo per le flotte di droni commerciali grazie alla Spatiotemporal Knowledge Distillation e al filtraggio onboard a bassissimo consumo.">
+          Eliminating the post-flight data bottleneck for commercial drone fleets through Spatiotemporal Knowledge Distillation and ultra-low-power onboard filtering.
+        </p>
+      </div>
+
+      <div class="aidra-showcase">
+        <div class="aidra-top-bar">
+          <div class="aidra-brand">
+            <svg width="150" height="36" viewBox="0 0 190 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 8L24 20L4 32" stroke="#FFFFFF" stroke-width="5.5" stroke-linecap="square" stroke-linejoin="miter"/>
+              <rect x="30" y="27" width="18" height="5.5" fill="#2DD4BF"/>
+              <text x="60" y="31" fill="#FFFFFF" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="30" letter-spacing="-0.03em">Aidra</text>
+              <rect x="61" y="38" width="82" height="2.5" fill="#2DD4BF"/>
+            </svg>
+            <span class="aidra-badge-role" data-en="Co-Founder &amp; CTO • Bonn, Germany" data-it="Co-Founder &amp; CTO • Bonn, Germania">
+              Co-Founder &amp; CTO • Bonn, Germany
+            </span>
+          </div>
+
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <span class="inst-chip">🏛️ University of Bonn • CV Lab</span>
+            <span class="inst-chip">🚀 Transfer Center enaCom</span>
+          </div>
+        </div>
+
+        <div class="aidra-grid">
+          <div>
+            <p class="aidra-lead"
+               data-en="Commercial drone inspections generate <strong>60+ GB of raw video per flight</strong>, forcing engineering teams into hours of manual screening or requiring heavy, battery-draining onboard GPUs. As <strong>Co-Founder &amp; CTO</strong>, I architected Aidra's <strong>Two-Stage Onboard Cascade</strong> powered by <strong>Spatiotemporal Knowledge Distillation (SKD)</strong> — compressing dual spatial and temporal Teacher networks into a tiny INT8-quantized Student model that runs directly on a sub-0.5W microcontroller."
+               data-it="Le ispezioni commerciali con droni generano oltre <strong>60 GB di video grezzo per volo</strong>, costringendo i team a ore di revisione manuale o all'uso di GPU pesanti che scaricano le batterie. Come <strong>Co-Founder &amp; CTO</strong>, ho progettato l'architettura <strong>Two-Stage Onboard Cascade</strong> di Aidra basata su <strong>Spatiotemporal Knowledge Distillation (SKD)</strong> — comprimendo reti Teacher spaziali e temporali in un modello Student quantizzato INT8 che gira su microcontrollore sotto 0.5W.">
+              Commercial drone inspections generate <strong>60+ GB of raw video per flight</strong>, forcing engineering teams into hours of manual screening or requiring heavy, battery-draining onboard GPUs. As <strong>Co-Founder &amp; CTO</strong>, I architected Aidra's <strong>Two-Stage Onboard Cascade</strong> powered by <strong>Spatiotemporal Knowledge Distillation (SKD)</strong> — compressing dual spatial and temporal Teacher networks into a tiny INT8-quantized Student model that runs directly on a sub-0.5W microcontroller.
+            </p>
+
+            <div class="aidra-pipeline">
+              <div class="pipeline-step">
+                <span class="step-num">Stage 01 • Trigger</span>
+                <h4 data-en="64×64px SKD Saliency" data-it="Trigger SKD 64×64px">64×64px SKD Saliency</h4>
+                <p data-en="Continuous spatiotemporal anomaly screening at 50 FPS on a &lt;0.5W MCU, discarding empty sky &amp; healthy infrastructure."
+                   data-it="Screening continuo spazio-temporale a 50 FPS su MCU &lt;0.5W, scartando in tempo reale le tratte prive di anomalie.">
+                  Continuous spatiotemporal anomaly screening at 50 FPS on a &lt;0.5W MCU, discarding empty sky &amp; healthy infrastructure.
+                </p>
+              </div>
+
+              <div class="pipeline-step">
+                <span class="step-num">Stage 02 • Verifier</span>
+                <h4 data-en="224×224px ROI Verifier" data-it="Verifica ROI 224×224px">224×224px ROI Verifier</h4>
+                <p data-en="High-precision defect verification on candidate regions for wind turbines, solar PV parks, bridges, and power grids."
+                   data-it="Verifica ad alta precisione sui soli frame candidati per pale eoliche, parchi fotovoltaici, ponti e reti elettriche.">
+                  High-precision defect verification on candidate regions for wind turbines, solar PV parks, bridges, and power grids.
+                </p>
+              </div>
+
+              <div class="pipeline-step">
+                <span class="step-num">Stage 03 • Telemetry</span>
+                <h4 data-en="MAVLink &amp; GIS Export" data-it="Telemetria MAVLink &amp; GIS">MAVLink &amp; GIS Export</h4>
+                <p data-en="Synchronizes extracted defect crops with PX4/MAVLink GPS coordinates and exports GDPR/SORA-compliant reports."
+                   data-it="Sincronizza le anomalie con coordinate GPS PX4/MAVLink ed esporta report conformi alle normative GDPR e SORA.">
+                  Synchronizes extracted defect crops with PX4/MAVLink GPS coordinates and exports GDPR/SORA-compliant reports.
+                </p>
+              </div>
+            </div>
+
+            <div class="tag-row">
+              <span class="tech-tag">Spatiotemporal Knowledge Distillation</span>
+              <span class="tech-tag">PyTorch</span>
+              <span class="tech-tag">ONNX Runtime</span>
+              <span class="tech-tag">INT8 Quantization</span>
+              <span class="tech-tag">Embedded C/C++</span>
+              <span class="tech-tag">MAVLink / PX4</span>
+              <span class="tech-tag">SWaP-C Optimization</span>
+            </div>
+          </div>
+
+          <div class="aidra-stats-panel">
+            <div class="aidra-stats-grid">
+              <div class="aidra-stat-box">
+                <div class="val">&gt;90%</div>
+                <div class="lbl" data-en="Post-Flight Review Reduction" data-it="Riduzione Tempi Post-Volo">Post-Flight Review Reduction</div>
+              </div>
+              <div class="aidra-stat-box">
+                <div class="val">50 FPS</div>
+                <div class="lbl" data-en="Edge Inference Speed" data-it="Velocità Inferenza Edge">Edge Inference Speed</div>
+              </div>
+              <div class="aidra-stat-box">
+                <div class="val">0.0526</div>
+                <div class="lbl" data-en="PoC Benchmark MAE" data-it="MAE Benchmark PoC">PoC Benchmark MAE</div>
+              </div>
+              <div class="aidra-stat-box">
+                <div class="val">65.8%</div>
+                <div class="lbl" data-en="Peak Recall @ 64×64px" data-it="Peak Recall @ 64×64px">Peak Recall @ 64×64px</div>
+              </div>
+            </div>
+
+            <div class="partner-strip">
+              <div class="partner-strip-title" data-en="Validated with European Industry Partners (Signed LOIs)" data-it="Validato con Partner Industriali Europei (LOI Firmate)">
+                Validated with European Industry Partners (Signed LOIs)
+              </div>
+              <div class="partner-chips">
+                <span class="partner-chip">✈️ Droniq GmbH (UTM Airspace)</span>
+                <span class="partner-chip">🚁 Copting GmbH</span>
+                <span class="partner-chip">🔍 Inspectiondrone srl</span>
+                <span class="partner-chip">⚡ B2G Sicily srl</span>
+              </div>
+            </div>
+
+            <div class="partner-strip" style="margin-top: 14px;">
+              <div class="partner-strip-title" data-en="Scientific Mentorship &amp; Compute Ecosystem" data-it="Mentorship Scientifica &amp; Ecosistema">
+                Scientific Mentorship &amp; Compute Ecosystem
+              </div>
+              <div class="partner-chips">
+                <span class="inst-chip">Prof. Dr. Jürgen Gall (Uni Bonn)</span>
+                <span class="inst-chip">WestAI HPC Cluster</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+    </section>
+
+    <!-- STUDIES & CAREER TIMELINE -->
+    <section class="section-block" id="studies">
+      <div class="section-header">
+        <span class="section-eyebrow" data-en="Academic &amp; Professional Path" data-it="Percorso Accademico &amp; Professionale">Academic &amp; Professional Path</span>
+        <h2 class="section-title" data-en="Studies, Research &amp; Leadership" data-it="Studi, Ricerca &amp; Leadership">
+          Studies, Research &amp; Leadership
+        </h2>
+        <p class="section-desc"
+           data-en="From foundational Computer Science at Sapienza Università di Roma to advanced Computer Vision research and deep-tech entrepreneurship at the University of Bonn."
+           data-it="Dalla laurea in Informatica alla Sapienza Università di Roma fino alla ricerca avanzata in Computer Vision e all'imprenditoria deep-tech presso l'Università di Bonn.">
+          From foundational Computer Science at Sapienza Università di Roma to advanced Computer Vision research and deep-tech entrepreneurship at the University of Bonn.
+        </p>
+      </div>
+
+      <div class="timeline-grid">
+        <!-- Academic Column -->
+        <div>
+          <h3 class="timeline-col-title">
+            <i class="fas fa-graduation-cap"></i>
+            <span data-en="Education &amp; Academic Research" data-it="Istruzione &amp; Ricerca Accademica">Education &amp; Academic Research</span>
+          </h3>
+
+          <div class="timeline-list">
+            <!-- Uni Bonn -->
+            <article class="timeline-card">
+              <span class="timeline-period">2024 – Present</span>
+              <h3 data-en="M.Sc. in Computer Science" data-it="Laurea Magistrale (M.Sc.) in Computer Science">M.Sc. in Computer Science</h3>
+              <div class="timeline-inst">Rheinische Friedrich-Wilhelms-Universität Bonn (University of Excellence)</div>
+              <p data-en="Specializing in <strong>Computer Vision, Machine Learning, and Robotics</strong>. Conducting research on real-time video understanding, temporal action segmentation, and spatiotemporal knowledge distillation at the <strong>Computer Vision Lab</strong> (mentored by Prof. Dr. Jürgen Gall), alongside scientific machine learning at the <strong>Geometry Processing Lab</strong>."
+                 data-it="Specializzazione in <strong>Computer Vision, Machine Learning e Robotica</strong>. Ricerca su comprensione video in tempo reale, segmentazione temporale di azioni e Spatiotemporal Knowledge Distillation presso il <strong>Computer Vision Lab</strong> (sotto la supervisione del Prof. Dr. Jürgen Gall) e Machine Learning scientifico presso il <strong>Geometry Processing Lab</strong>.">
+                Specializing in <strong>Computer Vision, Machine Learning, and Robotics</strong>. Conducting research on real-time video understanding, temporal action segmentation, and spatiotemporal knowledge distillation at the <strong>Computer Vision Lab</strong> (mentored by Prof. Dr. Jürgen Gall), alongside scientific machine learning at the <strong>Geometry Processing Lab</strong>.
+              </p>
+              <div class="tag-row">
+                <span class="tech-tag">Vision Systems (MA-INF 4308)</span>
+                <span class="tech-tag">Action Segmentation (PyABD)</span>
+                <span class="tech-tag">Geometry Processing (GeoFusion)</span>
+                <span class="tech-tag">Knowledge Distillation</span>
+              </div>
+            </article>
+
+            <!-- Sapienza -->
+            <article class="timeline-card">
+              <span class="timeline-period">2020 – 2024</span>
+              <h3 data-en="B.Sc. in Computer Science (Informatica)" data-it="Laurea Triennale in Informatica">B.Sc. in Computer Science (Informatica)</h3>
+              <div class="timeline-inst">Sapienza Università di Roma — Dipartimento di Informatica</div>
+              <p data-en="Graduated with a strong foundation in algorithms, software engineering, computer architecture, distributed systems, databases, and cybersecurity. Developed the thesis project <strong>Horus</strong> on <em>Dynamic Saliency Estimation for Aerial UAV Videos via Spatiotemporal Knowledge Distillation</em>."
+                 data-it="Percorso completo in algoritmi, ingegneria del software, architettura degli elaboratori, sistemi distribuiti, basi di dati e cybersecurity. Sviluppo del progetto di ricerca <strong>Horus</strong> su <em>Stima dinamica della salienza per video aerei da UAV tramite Spatiotemporal Knowledge Distillation</em>.">
+                Graduated with a strong foundation in algorithms, software engineering, computer architecture, distributed systems, databases, and cybersecurity. Developed the thesis project <strong>Horus</strong> on <em>Dynamic Saliency Estimation for Aerial UAV Videos via Spatiotemporal Knowledge Distillation</em>.
+              </p>
+              <div class="tag-row">
+                <span class="tech-tag">Horus (UAV Saliency)</span>
+                <span class="tech-tag">Software Engineering</span>
+                <span class="tech-tag">Distributed Systems in Go</span>
+                <span class="tech-tag">Cybersecurity &amp; Networks</span>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Leadership & Experience Column -->
+        <div>
+          <h3 class="timeline-col-title">
+            <i class="fas fa-rocket"></i>
+            <span data-en="Ventures &amp; Engineering Experience" data-it="Imprenditoria &amp; Esperienza Ingegneristica">Ventures &amp; Engineering Experience</span>
+          </h3>
+
+          <div class="timeline-list">
+            <!-- Aidra CTO -->
+            <article class="timeline-card">
+              <span class="timeline-period">2025 – Present</span>
+              <h3 data-en="Co-Founder &amp; Chief Technology Officer (CTO)" data-it="Co-Founder &amp; Chief Technology Officer (CTO)">Co-Founder &amp; Chief Technology Officer (CTO)</h3>
+              <div class="timeline-inst">Aidra • Bonn, Germany</div>
+              <p data-en="Leading product architecture, deep learning model compression (SKD), ONNX/INT8 microcontroller deployment, and MAVLink autopilot integration. Co-leading European industry partnerships and the <strong>EXIST-Gründerstipendium</strong> deep-tech spin-off roadmap with Transfer Center enaCom."
+                 data-it="Guido l'architettura di prodotto, la compressione di modelli deep learning (SKD), il deployment ONNX/INT8 su microcontrollori e l'integrazione con autopiloti MAVLink. Co-guido le partnership industriali europee e il percorso spin-off <strong>EXIST-Gründerstipendium</strong> con il Transfer Center enaCom.">
+                Leading product architecture, deep learning model compression (SKD), ONNX/INT8 microcontroller deployment, and MAVLink autopilot integration. Co-leading European industry partnerships and the <strong>EXIST-Gründerstipendium</strong> deep-tech spin-off roadmap with Transfer Center enaCom.
+              </p>
+              <div class="tag-row">
+                <span class="tech-tag">Edge AI Architecture</span>
+                <span class="tech-tag">Embedded MCU</span>
+                <span class="tech-tag">UAV Telemetry</span>
+                <span class="tech-tag">Technical Leadership</span>
+              </div>
+            </article>
+
+            <!-- Research & Open Source -->
+            <article class="timeline-card">
+              <span class="timeline-period">2021 – Present</span>
+              <h3 data-en="AI, Computer Vision &amp; Full-Stack Engineer" data-it="Ingegnere AI, Computer Vision &amp; Full-Stack">AI, Computer Vision &amp; Full-Stack Engineer</h3>
+              <div class="timeline-inst">Open-Source &amp; Applied Research Projects</div>
+              <p data-en="Designed and shipped 24+ software systems spanning unsupervised temporal action segmentation (<strong>PyABD</strong>), nuclear fusion stellarator geometry optimization (<strong>GeoFusion</strong>), DINOv3/RF-DETR agricultural damage vision pipelines, autonomous drone path planners, Go backend servers, and native Kotlin/Jetpack Compose Android apps."
+                 data-it="Progettazione e sviluppo di oltre 24 sistemi software tra cui segmentazione temporale non supervisionata di azioni (<strong>PyABD</strong>), ottimizzazione geometrica di reattori a fusione Stellarator (<strong>GeoFusion</strong>), pipeline di visione DINOv3/RF-DETR, pianificatori di volo 3D per droni, backend in Go e app Android native in Kotlin/Jetpack Compose.">
+                Designed and shipped 24+ software systems spanning unsupervised temporal action segmentation (<strong>PyABD</strong>), nuclear fusion stellarator geometry optimization (<strong>GeoFusion</strong>), DINOv3/RF-DETR agricultural damage vision pipelines, autonomous drone path planners, Go backend servers, and native Kotlin/Jetpack Compose Android apps.
+              </p>
+              <div class="tag-row">
+                <span class="tech-tag">PyTorch</span>
+                <span class="tech-tag">DINOv3 &amp; RF-DETR</span>
+                <span class="tech-tag">Golang</span>
+                <span class="tech-tag">Kotlin / Compose</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED PROJECTS & RESEARCH -->
+    <section class="section-block" id="projects">
+      <div class="section-header">
+        <span class="section-eyebrow" data-en="Portfolio &amp; Open Source" data-it="Portfolio &amp; Open Source">Portfolio &amp; Open Source</span>
+        <h2 class="section-title" data-en="Featured Projects &amp; Research" data-it="Progetti in Evidenza &amp; Ricerca">
+          Featured Projects &amp; Research
+        </h2>
+        <p class="section-desc"
+           data-en="A curated selection of my recent work across Computer Vision, Autonomous UAVs, Scientific Machine Learning, and Full-Stack Engineering."
+           data-it="Una selezione dei miei lavori più recenti tra Computer Vision, Droni Autonomi (UAV), Machine Learning Scientifico e Ingegneria Full-Stack.">
+          A curated selection of my recent work across Computer Vision, Autonomous UAVs, Scientific Machine Learning, and Full-Stack Engineering.
+        </p>
+      </div>
+
+      <!-- Category Filter Buttons -->
+      <div class="filter-bar">
+        <button class="filter-btn active" onclick="filterProjects('all', this)" data-en="All Projects" data-it="Tutti i Progetti">All Projects</button>
+        <button class="filter-btn" onclick="filterProjects('cv', this)" data-en="AI &amp; Computer Vision" data-it="AI &amp; Computer Vision">AI &amp; Computer Vision</button>
+        <button class="filter-btn" onclick="filterProjects('uav', this)" data-en="UAV &amp; Edge Systems" data-it="Droni &amp; Edge AI">UAV &amp; Edge Systems</button>
+        <button class="filter-btn" onclick="filterProjects('sciml', this)" data-en="Scientific ML &amp; Physics" data-it="ML Scientifico &amp; Fisica">Scientific ML &amp; Physics</button>
+        <button class="filter-btn" onclick="filterProjects('fullstack', this)" data-en="Mobile &amp; Full-Stack" data-it="Mobile &amp; Full-Stack">Mobile &amp; Full-Stack</button>
+      </div>
+
+      <!-- Featured Cards Grid -->
+      <div class="projects-featured-grid">
+
+        <!-- 1. GeoFusion -->
+        <article class="project-card" data-category="sciml cv">
+          <div>
+            <div class="project-card-top">
+              <span class="project-category-badge">Scientific ML • 3D Optimization</span>
+              <div class="project-links">
+                <a href="https://github.com/federico-rosatelli/GeoFusion" target="_blank" rel="noopener" title="View on GitHub">
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <h3>GeoFusion</h3>
+            <div class="project-affiliation">🏛️ University of Bonn • Geometry Processing Lab (2026)</div>
+            <p data-en="Interactive computational platform for geometric design, optimization, and real-time 3D visualization of <strong>Stellarator nuclear fusion plasma boundaries</strong>."
+               data-it="Piattaforma interattiva per il design geometrico, l'ottimizzazione e la visualizzazione 3D in tempo reale dei confini di plasma nei reattori a fusione nucleare <strong>Stellarator</strong>.">
+              Interactive computational platform for geometric design, optimization, and real-time 3D visualization of <strong>Stellarator nuclear fusion plasma boundaries</strong>.
+            </p>
+            <ul class="project-highlights">
+              <li data-en="Trained MLP &amp; CNN neural surrogate models on the <em>ConStellaration</em> dataset to approximate Quasi-Isodynamicity and MHD stability."
+                  data-it="Modelli surrogati neurali (MLP &amp; CNN) sul dataset <em>ConStellaration</em> per stimare Quasi-Isodinamicità e stabilità MHD.">
+                Trained MLP &amp; CNN neural surrogate models on the <em>ConStellaration</em> dataset to approximate Quasi-Isodynamicity and MHD stability.
+              </li>
+              <li data-en="SLSQP physics-constrained optimization balancing plasma confinement with external magnet coil simplicity."
+                  data-it="Ottimizzazione SLSQP vincolata dalla fisica per bilanciare il confinamento del plasma con la semplicità delle bobine.">
+                SLSQP physics-constrained optimization balancing plasma confinement with external magnet coil simplicity.
+              </li>
+            </ul>
+          </div>
+          <div class="tag-row">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">PyTorch</span>
+            <span class="tech-tag">SciPy (SLSQP)</span>
+            <span class="tech-tag">Plotly 3D</span>
+            <span class="tech-tag">Streamlit</span>
+          </div>
+        </article>
+
+        <!-- 2. PyABD -->
+        <article class="project-card" data-category="cv">
+          <div>
+            <div class="project-card-top">
+              <span class="project-category-badge">Video Understanding • CVPR '22</span>
+              <div class="project-links">
+                <a href="https://github.com/federico-rosatelli/PyABD" target="_blank" rel="noopener" title="View on GitHub">
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <h3>PyABD — Action Boundary Detection</h3>
+            <div class="project-affiliation">🏛️ University of Bonn • Video Understanding (2026)</div>
+            <p data-en="Fast, completely unsupervised temporal action segmentation framework in PyTorch that detects action change points without frame-wise annotations."
+               data-it="Framework PyTorch veloce e totalmente non supervisionato per la segmentazione temporale di azioni nei video, senza bisogno di annotazioni frame-per-frame.">
+              Fast, completely unsupervised temporal action segmentation framework in PyTorch that detects action change points without frame-wise annotations.
+            </p>
+            <ul class="project-highlights">
+              <li data-en="Detects action boundaries via local minima in cosine feature similarity and refines segments with Weighted Merge Hierarchical Clustering."
+                  data-it="Rileva i confini delle azioni tramite minimi locali nella similarità del coseno e raffina i segmenti con Weighted Merge Clustering.">
+                Detects action boundaries via local minima in cosine feature similarity and refines segments with Weighted Merge Hierarchical Clustering.
+              </li>
+              <li data-en="Supports both Offline full-video evaluation (MoF/F1) and causal low-latency Online streaming mode."
+                  data-it="Supporta sia la modalità Offline (valutazione MoF/F1) sia lo streaming Online causale a bassa latenza.">
+                Supports both Offline full-video evaluation (MoF/F1) and causal low-latency Online streaming mode.
+              </li>
+            </ul>
+          </div>
+          <div class="tag-row">
+            <span class="tech-tag">PyTorch</span>
+            <span class="tech-tag">Unsupervised Learning</span>
+            <span class="tech-tag">Signal Processing</span>
+            <span class="tech-tag">SciPy</span>
+          </div>
+        </article>
+
+        <!-- 3. Vision Systems -->
+        <article class="project-card" data-category="cv">
+          <div>
+            <div class="project-card-top">
+              <span class="project-category-badge">Vision Transformers • Detection</span>
+              <div class="project-links">
+                <a href="https://github.com/federico-rosatelli/vision-systems" target="_blank" rel="noopener" title="View on GitHub">
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <h3>Vision Systems — Crop Damage AI</h3>
+            <div class="project-affiliation">🏛️ University of Bonn • Lab Vision Systems MA-INF 4308 (2026)</div>
+            <p data-en="End-to-end computer vision pipeline for automated agricultural flea beetle damage assessment combining self-supervised Vision Transformers and real-time object detectors."
+               data-it="Pipeline completa di Computer Vision per la stima automatica dei danni agricoli combinando Vision Transformer auto-supervisionati e rilevatori di oggetti in tempo reale.">
+              End-to-end computer vision pipeline for automated agricultural flea beetle damage assessment combining self-supervised Vision Transformers and real-time object detectors.
+            </p>
+            <ul class="project-highlights">
+              <li data-en="Leverages a <strong>DINOv3 ViT-S/16</strong> backbone with Multiple Instance Learning (MIL) for fine-grained severity regression."
+                  data-it="Utilizza una backbone <strong>DINOv3 ViT-S/16</strong> con Multiple Instance Learning (MIL) per la classificazione fine del danno.">
+                Leverages a <strong>DINOv3 ViT-S/16</strong> backbone with Multiple Instance Learning (MIL) for fine-grained severity regression.
+              </li>
+              <li data-en="Integrates <strong>RF-DETR</strong> for localized leaf hole &amp; pitting detection with an interactive web inspection demo."
+                  data-it="Integra <strong>RF-DETR</strong> per il rilevamento localizzato delle lesioni fogliari con demo web interattiva.">
+                Integrates <strong>RF-DETR</strong> for localized leaf hole &amp; pitting detection with an interactive web inspection demo.
+              </li>
+            </ul>
+          </div>
+          <div class="tag-row">
+            <span class="tech-tag">DINOv3 ViT-S/16</span>
+            <span class="tech-tag">RF-DETR</span>
+            <span class="tech-tag">Multiple Instance Learning</span>
+            <span class="tech-tag">PyTorch</span>
+          </div>
+        </article>
+
+        <!-- 4. Aidra / Drone-SKD -->
+        <article class="project-card" data-category="uav cv">
+          <div>
+            <div class="project-card-top">
+              <span class="project-category-badge">Edge AI • Autonomous UAV</span>
+              <div class="project-links">
+                <a href="#aidra" title="Read Aidra Case Study">
+                  <i class="fas fa-bolt"></i>
+                </a>
+              </div>
+            </div>
+            <h3>Aidra &amp; Drone-SKD Engine</h3>
+            <div class="project-affiliation">🚀 Aidra • Bonn &amp; University of Bonn (2025–2026)</div>
+            <p data-en="Sub-0.5W onboard anomaly extraction engine and interconnected 6-cluster Knowledge Graph architecture for commercial UAV inspection fleets."
+               data-it="Motore di estrazione anomalie onboard sotto 0.5W e architettura Knowledge Graph a 6 cluster per flotte di droni da ispezione industriale.">
+              Sub-0.5W onboard anomaly extraction engine and interconnected 6-cluster Knowledge Graph architecture for commercial UAV inspection fleets.
+            </p>
+            <ul class="project-highlights">
+              <li data-en="Two-stage cascade: 64×64px Spatiotemporal Trigger (50 FPS) + 224×224px ROI Verifier."
+                  data-it="Cascata a due stadi: Trigger Spazio-Temporale 64×64px (50 FPS) + Verificatore ROI 224×224px.">
+                Two-stage cascade: 64×64px Spatiotemporal Trigger (50 FPS) + 224×224px ROI Verifier.
+              </li>
+              <li data-en="ONNX graph optimization, INT8 quantization, and real-time MAVLink/PX4 telemetry tagging."
+                  data-it="Ottimizzazione grafo ONNX, quantizzazione INT8 e tagging telemetrico MAVLink/PX4 in tempo reale.">
+                ONNX graph optimization, INT8 quantization, and real-time MAVLink/PX4 telemetry tagging.
+              </li>
+            </ul>
+          </div>
+          <div class="tag-row">
+            <span class="tech-tag">SKD Distillation</span>
+            <span class="tech-tag">ONNX / INT8</span>
+            <span class="tech-tag">Embedded MCU</span>
+            <span class="tech-tag">MAVLink</span>
+          </div>
+        </article>
+
+        <!-- 5. Horus -->
+        <article class="project-card" data-category="uav cv">
+          <div>
+            <div class="project-card-top">
+              <span class="project-category-badge">UAV Vision • Saliency</span>
+              <div class="project-links">
+                <a href="https://github.com/federico-rosatelli/Horus" target="_blank" rel="noopener" title="View on GitHub">
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <h3>Horus — Aerial Saliency Detection</h3>
+            <div class="project-affiliation">🎓 Sapienza Università di Roma • Dip. di Informatica (2024)</div>
+            <p data-en="Environmental monitoring and dynamic saliency estimation for aerial UAV videos via dual-branch Spatiotemporal Knowledge Distillation."
+               data-it="Monitoraggio ambientale e stima dinamica della salienza per video aerei ripresi da droni tramite Spatiotemporal Knowledge Distillation a doppio ramo.">
+              Environmental monitoring and dynamic saliency estimation for aerial UAV videos via dual-branch Spatiotemporal Knowledge Distillation.
+            </p>
+            <ul class="project-highlights">
+              <li data-en="Transfers spatial and temporal saliency knowledge from two complex Teacher networks into two compact Student models."
+                  data-it="Trasferisce la conoscenza di salienza spaziale e temporale da due reti Teacher complesse a due modelli Student compatti.">
+                Transfers spatial and temporal saliency knowledge from two complex Teacher networks into two compact Student models.
+              </li>
+              <li data-en="Unifies distilled representations into a single lightweight spatiotemporal network for drone deployment."
+                  data-it="Unifica le rappresentazioni distillate in un'unica rete spazio-temporale leggera per l'esecuzione su droni.">
+                Unifies distilled representations into a single lightweight spatiotemporal network for drone deployment.
+              </li>
+            </ul>
+          </div>
+          <div class="tag-row">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Knowledge Distillation</span>
+            <span class="tech-tag">Aerial Video Saliency</span>
+            <span class="tech-tag">Deep Learning</span>
+          </div>
+        </article>
+
+        <!-- 6. Nothing Weekly Classes -->
+        <article class="project-card" data-category="fullstack">
+          <div>
+            <div class="project-card-top">
+              <span class="project-category-badge">Android • Nothing OS</span>
+              <div class="project-links">
+                <a href="https://github.com/federico-rosatelli" target="_blank" rel="noopener" title="GitHub Profile">
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <h3>Nothing Classes ⬛🔴</h3>
+            <div class="project-affiliation">📱 Kotlin &amp; Jetpack Compose • Nothing OS (2026)</div>
+            <p data-en="Minimalist, high-contrast weekly class schedule &amp; attendance widget suite engineered for Nothing Phone (3/2/1) and Nothing OS (Android 14/15)."
+               data-it="Suite di widget minimalisti ad alto contrasto e companion app per la gestione dell'orario universitario su Nothing Phone (3/2/1) e Nothing OS.">
+              Minimalist, high-contrast weekly class schedule &amp; attendance widget suite engineered for Nothing Phone (3/2/1) and Nothing OS (Android 14/15).
+            </p>
+            <ul class="project-highlights">
+              <li data-en="Features pure AMOLED black geometry, dot-matrix typography, and Nothing Red (#D71921) live 'UP NEXT' indicators."
+                  data-it="Design puro AMOLED black, tipografia dot-matrix e indicatori live in Nothing Red (#D71921).">
+                Features pure AMOLED black geometry, dot-matrix typography, and Nothing Red (#D71921) live 'UP NEXT' indicators.
+              </li>
+              <li data-en="One-click JSON interoperability syncing seamlessly with Linux desktop schedule configurations."
+                  data-it="Sincronizzazione JSON bidirezionale con il calendario desktop Linux.">
+                One-click JSON interoperability syncing seamlessly with Linux desktop schedule configurations.
+              </li>
+            </ul>
+          </div>
+          <div class="tag-row">
+            <span class="tech-tag">Kotlin</span>
+            <span class="tech-tag">Jetpack Compose</span>
+            <span class="tech-tag">Android AppWidgets</span>
+            <span class="tech-tag">Nothing OS UI</span>
+          </div>
+        </article>
+
+        <!-- 7. UAV-Drone-Path -->
+        <article class="project-card" data-category="uav">
+          <div>
+            <div class="project-card-top">
+              <span class="project-category-badge">UAV Navigation • ★ 4</span>
+              <div class="project-links">
+                <a href="https://github.com/federico-rosatelli/uav-drone-path" target="_blank" rel="noopener" title="View on GitHub">
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <h3>UAV-Drone-Path</h3>
+            <div class="project-affiliation">🚁 Autonomous Trajectory &amp; Obstacle Avoidance</div>
+            <p data-en="Python simulation package for 3D coordinate grid generation, obstacle avoidance, and autonomous virtual drone trajectory planning."
+               data-it="Libreria Python di simulazione per la generazione di griglie 3D con ostacoli e la pianificazione autonoma di traiettorie per droni virtuali.">
+              Python simulation package for 3D coordinate grid generation, obstacle avoidance, and autonomous virtual drone trajectory planning.
+            </p>
+            <ul class="project-highlights">
+              <li data-en="Constructs 3D obstacle environments and computes collision-free flight paths across multi-objective waypoints."
+                  data-it="Costruisce ambienti 3D con ostacoli e calcola rotte di volo prive di collisioni su waypoint multi-obiettivo.">
+                Constructs 3D obstacle environments and computes collision-free flight paths across multi-objective waypoints.
+              </li>
+              <li data-en="Supports geographical coordinate border field generation and interactive 3D route visualization."
+                  data-it="Supporta la generazione di campi basati su confini geografici e visualizzazione 3D della rotta.">
+                Supports geographical coordinate border field generation and interactive 3D route visualization.
+              </li>
+            </ul>
+          </div>
+          <div class="tag-row">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">3D Path Planning</span>
+            <span class="tech-tag">Obstacle Avoidance</span>
+            <span class="tech-tag">Matplotlib 3D</span>
+          </div>
+        </article>
+
+        <!-- 8. Bio-Server & Vulgaris-Platform -->
+        <article class="project-card" data-category="fullstack">
+          <div>
+            <div class="project-card-top">
+              <span class="project-category-badge">Backend &amp; Web • Go + Vue</span>
+              <div class="project-links">
+                <a href="https://github.com/federico-rosatelli/Bio-Server" target="_blank" rel="noopener" title="Bio-Server on GitHub">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="https://github.com/federico-rosatelli/Vulgaris-Platform" target="_blank" rel="noopener" title="Vulgaris-Platform on GitHub">
+                  <i class="fas fa-layer-group"></i>
+                </a>
+              </div>
+            </div>
+            <h3>Bio-Server &amp; Vulgaris Platform</h3>
+            <div class="project-affiliation">🧬 Full-Stack Bioinformatics Architecture</div>
+            <p data-en="Modular Go backend server and Vue.js frontend web application designed for managing, querying, and visualizing biological datasets."
+               data-it="Server backend modulare in Go e applicazione web frontend in Vue.js progettati per la gestione e visualizzazione di dataset biologici.">
+              Modular Go backend server and Vue.js frontend web application designed for managing, querying, and visualizing biological datasets.
+            </p>
+            <ul class="project-highlights">
+              <li data-en="Containerized RESTful backend in Golang with structured relational &amp; NoSQL data persistence."
+                  data-it="Backend RESTful containerizzato in Golang con persistenza dati strutturata.">
+                Containerized RESTful backend in Golang with structured relational &amp; NoSQL data persistence.
+              </li>
+              <li data-en="Reactive Vue.js interface for dynamic table views and scientific data exploration."
+                  data-it="Interfaccia reattiva in Vue.js per viste tabellari dinamiche ed esplorazione scientifica.">
+                Reactive Vue.js interface for dynamic table views and scientific data exploration.
+              </li>
+            </ul>
+          </div>
+          <div class="tag-row">
+            <span class="tech-tag">Go (Golang)</span>
+            <span class="tech-tag">Vue.js</span>
+            <span class="tech-tag">Docker</span>
+            <span class="tech-tag">REST API</span>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- LIVE GITHUB REPOSITORY EXPLORER -->
+      <div class="github-explorer-box">
+        <div class="github-explorer-header">
+          <div>
+            <h3 style="font-family: var(--font-display); font-size: 1.4rem; margin-bottom: 4px;"
+                data-en="<i class='fab fa-github' style='color: var(--accent-teal); margin-right: 8px;'></i> Live GitHub Repositories"
+                data-it="<i class='fab fa-github' style='color: var(--accent-teal); margin-right: 8px;'></i> Repository GitHub Live">
+              <i class="fab fa-github" style="color: var(--accent-teal); margin-right: 8px;"></i> Live GitHub Repositories
+            </h3>
+            <p style="font-size: 0.88rem; color: var(--text-secondary);"
+               data-en="Synced dynamically with @federico-rosatelli on GitHub."
+               data-it="Sincronizzato dinamicamente con il profilo @federico-rosatelli su GitHub.">
+              Synced dynamically with @federico-rosatelli on GitHub.
+            </p>
+          </div>
+          <input type="text" id="repo-search" class="repo-search-input" placeholder="Search repositories or language..." />
+        </div>
+
+        <div id="live-repos-container" class="live-repos-grid"></div>
+      </div>
+    </section>
+
+    <!-- TECH STACK & SKILLS MATRIX -->
+    <section class="section-block" id="skills">
+      <div class="section-header">
+        <span class="section-eyebrow" data-en="Technical Arsenal" data-it="Competenze Tecniche">Technical Arsenal</span>
+        <h2 class="section-title" data-en="Core Competencies &amp; Tech Stack" data-it="Competenze Chiave &amp; Tech Stack">
+          Core Competencies &amp; Tech Stack
+        </h2>
+        <p class="section-desc"
+           data-en="Bridging deep learning research, low-level embedded optimization, and scalable software engineering."
+           data-it="Unisco ricerca nel deep learning, ottimizzazione embedded a basso livello e ingegneria del software scalabile.">
+          Bridging deep learning research, low-level embedded optimization, and scalable software engineering.
+        </p>
+      </div>
+
+      <div class="skills-domains-grid">
+        <!-- Domain 1: AI & Computer Vision -->
+        <div class="skill-domain-card">
+          <div class="skill-domain-icon">
+            <i class="fas fa-brain"></i>
+          </div>
+          <h3 data-en="AI, Vision &amp; Model Compression" data-it="AI, Visione &amp; Compressione Modelli">AI, Vision &amp; Model Compression</h3>
+          <p data-en="Deep neural architectures for video understanding, saliency, action segmentation, and knowledge distillation."
+             data-it="Architetture neurali per comprensione video, salienza, action segmentation e knowledge distillation.">
+            Deep neural architectures for video understanding, saliency, action segmentation, and knowledge distillation.
+          </p>
+          <div class="skill-bars-list">
+            <div class="skill-bar-row">
+              <div class="skill-bar-label"><span>PyTorch &amp; Deep Learning</span><span>98%</span></div>
+              <div class="skill-track"><div class="skill-fill" style="width: 98%;"></div></div>
+            </div>
+            <div class="skill-bar-row">
+              <div class="skill-bar-label"><span>Knowledge Distillation (SKD)</span><span>95%</span></div>
+              <div class="skill-track"><div class="skill-fill" style="width: 95%;"></div></div>
+            </div>
+            <div class="skill-bar-row">
+              <div class="skill-bar-label"><span>Vision Transformers (DINOv3 / DETR)</span><span>92%</span></div>
+              <div class="skill-track"><div class="skill-fill" style="width: 92%;"></div></div>
+            </div>
+            <div class="skill-bar-row">
+              <div class="skill-bar-label"><span>ONNX Runtime &amp; INT8 Quantization</span><span>94%</span></div>
+              <div class="skill-track"><div class="skill-fill" style="width: 94%;"></div></div>
+            </div>
+            <div class="skill-bar-row">
+              <div class="skill-bar-label"><span>SciPy / NumPy / Physics Surrogates</span><span>90%</span></div>
+              <div class="skill-track"><div class="skill-fill" style="width: 90%;"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Domain 2: UAV, Embedded & Robotics -->
+        <div class="skill-domain-card">
+          <div class="skill-domain-icon">
+            <i class="fas fa-microchip"></i>
+          </div>
+          <h3 data-en="Embedded, UAV &amp; Edge Systems" data-it="Sistemi Embedded, UAV &amp; Edge">Embedded, UAV &amp; Edge Systems</h3>
+          <p data-en="Real-time onboard software operating within strict SWaP-C (Size, Weight, Power, and Cost) constraints."
+             data-it="Software onboard in tempo reale progettato per operare sotto stringenti vincoli SWaP-C.">
+            Real-time onboard software operating within strict SWaP-C (Size, Weight, Power, and Cost) constraints.
+          </p>
+          <div class="skill-bars-list">
+            <div class="skill-bar-row">
+              <div class="skill-bar-label"><span>Python (Research &amp; Production)</span><span>100%</span></div>
+              <div class="skill-track"><div class="skill-fill" style="width: 100%;"></div></div>
+            </div>
+            <div class="skill-bar-row">
+              <div class="skill-bar-label"><span>C / C++ &amp; MCU Edge Deployment</span><span>88%</span></div>
+              <div class="skill-track"><div class="skill-fill" style="width: 88%;"></div></div>
+            </div>
+            <div class="skill-bar-row">
+              <div class="skill-bar-label"><span>MAVLink / PX4 Autopilot Telemetry</span><span>90%</span></div>
+              <div class="skill-track"><div class="skill-fill" style="width: 90%;"></div></div>
+            </div>
+            <div class="skill-bar-row">
+              <div class="skill-bar-label"><span>Linux / Embedded Linux / RTOS</span><span>95%</span></div>
+              <div class="skill-track"><div class="skill-fill" style="width: 95%;"></div></div>
+            </div>
+            <div class="skill-bar-row">
+              <div class="skill-bar-label"><span>3D Path Planning &amp; Simulation</span><span>90%</span></div>
+              <div class="skill-track"><div class="skill-fill" style="width: 90%;"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Domain 3: Software Engineering & Cloud -->
+        <div class="skill-domain-card">
+          <div class="skill-domain-icon">
+            <i class="fas fa-server"></i>
+          </div>
+          <h3 data-en="Software, Cloud &amp; Mobile Engineering" data-it="Ingegneria Software, Cloud &amp; Mobile">Software, Cloud &amp; Mobile Engineering</h3>
+          <p data-en="End-to-end backend microservices, cloud infrastructure, data visualization, and native Android apps."
+             data-it="Microservizi backend, infrastrutture cloud, data visualization e applicazioni Android native.">
+            End-to-end backend microservices, cloud infrastructure, data visualization, and native Android apps.
+          </p>
+          <div class="skill-bars-list">
+            <div class="skill-bar-row">
+              <div class="skill-bar-label"><span>Go (Golang) &amp; Distributed Backends</span><span>88%</span></div>
+              <div class="skill-track"><div class="skill-fill" style="width: 88%;"></div></div>
+            </div>
+            <div class="skill-bar-row">
+              <div class="skill-bar-label"><span>Kotlin &amp; Jetpack Compose (Android)</span><span>86%</span></div>
+              <div class="skill-track"><div class="skill-fill" style="width: 86%;"></div></div>
+            </div>
+            <div class="skill-bar-row">
+              <div class="skill-bar-label"><span>TypeScript / JavaScript / Vue.js</span><span>88%</span></div>
+              <div class="skill-track"><div class="skill-fill" style="width: 88%;"></div></div>
+            </div>
+            <div class="skill-bar-row">
+              <div class="skill-bar-label"><span>SQL &amp; NoSQL (MongoDB)</span><span>92%</span></div>
+              <div class="skill-track"><div class="skill-fill" style="width: 92%;"></div></div>
+            </div>
+            <div class="skill-bar-row">
+              <div class="skill-bar-label"><span>Docker, Git, AWS &amp; HPC (SLURM)</span><span>92%</span></div>
+              <div class="skill-track"><div class="skill-fill" style="width: 92%;"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section-block" id="contact">
+      <div class="section-header">
+        <span class="section-eyebrow" data-en="Get In Touch" data-it="Contattami">Get In Touch</span>
+        <h2 class="section-title" data-en="Let's Build Something Impactful" data-it="Costruiamo Qualcosa di Impatto">
+          Let's Build Something Impactful
+        </h2>
+        <p class="section-desc"
+           data-en="Interested in Aidra pilot deployments, Computer Vision research collaborations, or deep-tech opportunities? Reach out directly."
+           data-it="Interessato a collaborazioni di ricerca in Computer Vision, progetti pilota con Aidra o opportunità deep-tech? Scrivimi direttamente.">
+          Interested in Aidra pilot deployments, Computer Vision research collaborations, or deep-tech opportunities? Reach out directly.
+        </p>
+      </div>
+
+      <div class="contact-wrapper">
+        <div>
+          <h3 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 10px;"
+              data-en="Direct Channels" data-it="Canali Diretti">Direct Channels</h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem;"
+             data-en="Whether you're in Bonn, Rome, or anywhere in Europe, feel free to connect via LinkedIn, GitHub, or email."
+             data-it="Che tu sia a Bonn, Roma o altrove in Europa, puoi contattarmi su LinkedIn, GitHub o via email.">
+            Whether you're in Bonn, Rome, or anywhere in Europe, feel free to connect via LinkedIn, GitHub, or email.
+          </p>
+
+          <div class="contact-channels">
+            <a href="mailto:frosatelli@gmail.com?subject=Hello%20Federico" class="contact-channel-card">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <div style="font-weight: 600;">frosatelli@gmail.com</div>
+                <div style="font-size: 0.8rem; color: var(--text-secondary);">Direct Email</div>
+              </div>
+            </a>
+
+            <a href="https://www.linkedin.com/in/federico-rosatelli/" target="_blank" rel="noopener" class="contact-channel-card">
+              <i class="fab fa-linkedin"></i>
+              <div>
+                <div style="font-weight: 600;">linkedin.com/in/federico-rosatelli</div>
+                <div style="font-size: 0.8rem; color: var(--text-secondary);">Professional Network &amp; Aidra Updates</div>
+              </div>
+            </a>
+
+            <a href="https://github.com/federico-rosatelli" target="_blank" rel="noopener" class="contact-channel-card">
+              <i class="fab fa-github"></i>
+              <div>
+                <div style="font-weight: 600;">github.com/federico-rosatelli</div>
+                <div style="font-size: 0.8rem; color: var(--text-secondary);">Open-Source Code &amp; Research Repositories</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-form-modern">
+          <div class="form-row-2">
+            <div class="input-group">
+              <label for="name-form" data-en="*Your Name" data-it="*Il Tuo Nome">*Your Name</label>
+              <input type="text" id="name-form" placeholder="Jane Doe" required />
+            </div>
+            <div class="input-group">
+              <label for="email-form" data-en="*Your Email" data-it="*La Tua Email">*Your Email</label>
+              <input type="email" id="email-form" placeholder="jane@company.com" required />
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label for="subject-form" data-en="Subject / Topic" data-it="Oggetto">Subject / Topic</label>
+            <input type="text" id="subject-form" placeholder="Aidra Partnership / Research / Inquiry" />
+          </div>
+
+          <div class="input-group">
+            <label for="message-form" data-en="*Message" data-it="*Messaggio">*Message</label>
+            <textarea id="message-form" rows="5" placeholder="Hi Federico, I'd love to discuss..." required></textarea>
+          </div>
+
+          <div id="form-feedback" class="form-feedback"></div>
+
+          <button type="button" class="btn btn-primary" onclick="sendMessage()" style="align-self: flex-start;">
+            <i class="fas fa-paper-plane"></i>
+            <span data-en="Send Message" data-it="Invia Messaggio">Send Message</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container-main">
+      <p>© 2026 Federico Rosatelli • Built between Rome 🇮🇹 &amp; Bonn 🇩🇪 • Co-Founder &amp; CTO @ Aidra</p>
     </div>
+  </footer>
 
-    
-    <script>
-      var divElement = document.getElementById('viz1702298843374');
-      var vizElement = divElement.getElementsByTagName('object')[0];
-      vizElement.style.width='78%';
-      vizElement.style.height=(divElement.offsetWidth*0.40)+'px';
-      var scriptElement = document.createElement('script');
-      scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-      vizElement.parentNode.insertBefore(scriptElement, vizElement);
-      
-      var divElement1 = document.getElementById('viz1662919139071');                    
-      var vizElement1 = divElement1.getElementsByTagName('object')[0];                    
-      vizElement1.style.width='78%';
-      vizElement1.style.height=(divElement1.offsetWidth*0.40)+'px';                    
-      var scriptElement1 = document.createElement('script');                    
-      scriptElement1.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
-      vizElement1.parentNode.insertBefore(scriptElement1, vizElement1);                
-      function openNav() {
-        document.getElementById("mySidenav").style.width = "15%";
-      }
-
-      function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-      }
-
-      var i = 0;
-      var txt = 'Hi!\n my name is federico and i am a computer science student at sapienza università di roma.\nI was born in Rome, I am 22 years old and I like computers world';
-      function typewrite() {
-        if (i < txt.length) {
-          if (txt.charAt(i) == "\n"){
-            document.getElementById("demo").innerHTML += "<br /><br />";
-          }
-          let speed = 50;
-          if (txt.charAt(i) == "."){
-            speed *= 8;
-          }
-          document.getElementById("demo").innerHTML += txt.charAt(i);
-          i++;
-          setTimeout(typewrite, speed);
-        }
-      }
-    </script>
-  </body>
+  <script src="js/api.js"></script>
+</body>
 </html>
